@@ -1,0 +1,45 @@
+<div id="mainContent">
+  <h1>Add Inventory</h1>
+  <div id="inventoryCard">
+    <form [formGroup]="inventoryForm" (ngSubmit)="onSubmit()" class="myForm">
+      <mat-card>
+        <mat-card-content>
+          <div class="myInputs">
+            <mat-form-field class="example-full-width">
+              <mat-label>Product Name</mat-label>
+              <input matInput formControlName="productName" />
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>Product Price</mat-label>
+              <input matInput formControlName="productPrice" />
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>Current Amount</mat-label>
+              <input matInput formControlName="currentAmount" />
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button
+            type="button"
+            class="actionButtons"
+            mat-raised-button
+            color="warn"
+            (click)="onCancel()"
+          >
+            Cancel
+          </button>
+          <button
+            type="submit"
+            class="actionButtons"
+            mat-raised-button
+            color="primary"
+            [disabled]="inventoryForm.invalid"
+          >
+            Add
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+  </div>
+</div>

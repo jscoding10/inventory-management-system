@@ -1,0 +1,32 @@
+<div id="updateForm">
+  <h1 id="updateInventoryTitle">Update Inventory</h1>
+  <form [formGroup]="deleteForm" (ngSubmit)="onSubmit()" class="myForm">
+    <div class="myInputs">
+      <mat-form-field class="example-full-width">
+        <mat-label class="formInput">Product Name</mat-label>
+        <input class="formInput" matInput formControlName="productName" />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label class="formInput">Product Price</mat-label>
+        <input class="formInput" matInput formControlName="productPrice" />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label class="formInput">Current Amount</mat-label>
+        <input class="formInput" matInput formControlName="currentAmount" />
+      </mat-form-field>
+    </div>
+
+    <button
+      type="button"
+      class="actionButtons"
+      mat-dialog-close
+      mat-raised-button
+      color="primary"
+    >
+      Cancel
+    </button>
+    <button type="submit" class="actionButtons" mat-raised-button color="warn">
+      Delete
+    </button>
+  </form>
+</div>
